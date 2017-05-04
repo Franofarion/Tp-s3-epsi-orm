@@ -40,5 +40,14 @@ public class ArtistDao {
 		} else {
 			return (Artist) l.get(0);
 		}
-	}	
+	}
+
+	public List<Artist> findAll(){
+		Session session = sessionFactory.getCurrentSession();
+		Query q = session.createQuery("FROM Artist");
+		List l = q.list();
+		return l;
+	}
+
+
 }

@@ -2,10 +2,7 @@ package net.joastbg.sampleapp;
 
 import junit.framework.Assert;
 import net.joastbg.sampleapp.dao.DiskDao;
-import net.joastbg.sampleapp.entities.Book;
-import net.joastbg.sampleapp.entities.Disk;
-import net.joastbg.sampleapp.entities.MusicStyle;
-import net.joastbg.sampleapp.entities.Person;
+import net.joastbg.sampleapp.entities.*;
 import net.joastbg.sampleapp.exceptions.DaoException;
 import org.junit.Before;
 import org.junit.Test;
@@ -47,5 +44,14 @@ public class DiskDaoTest {
 		Assert.assertEquals("MusicType incorrect", MusicStyle.ROCK, disk.getMusicStyle());
 	}
 
+
+	@Test public void testFindArtworkByArtistName() throws DaoException{
+		String artistName = "Muse";
+		List<Disk> disks = diskDao.findDiskByArtistName(artistName);
+		Assert.assertNotNull(disks);
+		for(Disk disk: disks){
+			System.out.println("DiskDaoTest testFindArtworkByArtistName Disk --> "+disk);
+		}
+	}
 	
 }

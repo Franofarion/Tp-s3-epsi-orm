@@ -11,6 +11,8 @@ import org.hibernate.annotations.Type;
  * 
  * @author Charlotte Cavalier <charlotte.cavalier@gmail.com>
  */
+@Entity
+@Table(name="DISK")
 public class Disk extends Article implements Serializable {
 
 	/**
@@ -18,6 +20,14 @@ public class Disk extends Article implements Serializable {
 	 */
 	private static final long serialVersionUID = 1635687572249825983L;
 
+	@EmbeddedId
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column
+	private Long idArticle;
+
+	@EmbeddedId
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column
 	private Long idArtist;
 
 	private MusicStyle musicStyle;
@@ -41,7 +51,7 @@ public class Disk extends Article implements Serializable {
 	}
 
 	/**
-	 * @param idMusicien the idMusicien to set
+	 * @param idArtist the idArtist to set
 	 */
 	public void setIdArtist(Long idArtist) {
 		this.idArtist = idArtist;

@@ -64,14 +64,14 @@ CREATE TABLE WROTE_BY_AUTHOR_BOOK (
 
 -- un article peut etre un livre, un disque ou un dvd
 -- un livre a un ou plusieurs auteurs
--- un cd peut etre realisé par un artiste ou un groupe
+-- un cd peut etre realisÃ© par un artiste ou un groupe
 -- un cd appartient a un style musical
 -- un dvd a une categorie , un realisateur et une ou plusieures vedettes
 
 
--- je veux pouvoir recuperer la totalité des oeuvre d'un artiste
--- je veux pouvoir connaitre la somme (prix) des ventes effectuée par categorie d'articles
+-- je veux pouvoir recuperer la totalitÃ© des oeuvre d'un artiste
+-- je veux pouvoir connaitre la somme (prix) des ventes effectuï¿½e par categorie d'articles
 -- je veux savoir quel style musical connait les meilleures ventes
--- je veux resister à l'injection sql
--- je veux pouvoir mettre à jour le prix des articles
--- les opérations CRUD doivent etre disponible pour chaque table
+-- je veux resister Ã  l'injection sql
+-- je veux pouvoir mettre Ã  jour le prix des articles
+-- les opï¿½rations CRUD doivent etre disponible pour chaque table

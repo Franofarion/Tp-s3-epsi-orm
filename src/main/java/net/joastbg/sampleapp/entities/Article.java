@@ -20,7 +20,7 @@ import javax.persistence.Table;
 public abstract class Article implements Serializable, Comparable<Article> {
 
 	/**
-	 * 
+	 * Objet Métier (DAO -> les accès, les échanges, Data access object)
 	 */
 	private static final long serialVersionUID = 2950938335694212226L;
 
