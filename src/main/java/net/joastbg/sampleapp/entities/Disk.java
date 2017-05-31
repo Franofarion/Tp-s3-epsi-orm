@@ -21,9 +21,7 @@ public class Disk extends Article implements Serializable {
 	private static final long serialVersionUID = 1635687572249825983L;
 
 	@EmbeddedId
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
-	private Long idArtist;
+	private DiskFK idDisk;
 
 	private MusicStyle musicStyle;
 
@@ -39,17 +37,25 @@ public class Disk extends Article implements Serializable {
 //	}
 
 	/**
-	 * @return the idArtist
+	 * @return the idDisk
 	 */
-	public Long getIdArtist() {
-		return idArtist;
+	public DiskFK getIdDisk() {
+		return idDisk;
+	}
+
+	@Override
+	public String toString() {
+		return "Disk{" +
+				"idDisk=" + idDisk +
+				", musicStyle=" + musicStyle +
+				'}';
 	}
 
 	/**
-	 * @param idArtist the idArtist to set
+	 * @param idDisk the idArtist to set
 	 */
-	public void setIdArtist(Long idArtist) {
-		this.idArtist = idArtist;
+	public void setIdDisk(DiskFK idDisk) {
+		this.idDisk = idDisk;
 	}
 
 	/**
@@ -66,3 +72,4 @@ public class Disk extends Article implements Serializable {
 		this.musicStyle = musicStyle;
 	}
 }
+

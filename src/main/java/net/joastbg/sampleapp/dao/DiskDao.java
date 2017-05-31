@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import net.joastbg.sampleapp.entities.Disk;
 
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -19,6 +20,7 @@ public class DiskDao {
 
 	@Autowired
 	SessionFactory sessionFactory;
+	@Autowired
 	ArtistDao artistDAO;
 
 
@@ -34,13 +36,23 @@ public class DiskDao {
 
 	public List findDiskByArtistName(String artistName) throws DaoException {
 		Session session = sessionFactory.getCurrentSession();
+		System.out.println("!! HERE !! findDiskByArtistName artistName : "+artistName);
 		Artist artist = artistDAO.findByName(artistName);
 		Long idArtist = artist.getId();
 
-		Query q = session.createQuery("FROM DISK WHERE idArtist = :idArtist");
+		Query q = session.createQuery("FROM DISK WHERE idDisk.idArtist = :idArtist");
 		q.setLong("idArtist", idArtist);
-		List l = q.list();
+		List<Disk> listDisk = q.list();
 
-		return l;
+		for(Disk disk:listDisk){
+			System.out.println("!! HERE !! findDiskByArtistName "+disk);
+		}
+
+		/*for (Iterator<String> i = l.iterator(); i.hasNext();) {
+			String item = i.next();
+			System.out.println("!! HERE !! findDiskByArtistName "+item);
+		}*/
+
+		return listDisk;
 	}
 }

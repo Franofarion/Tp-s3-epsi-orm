@@ -47,11 +47,11 @@ public class DiskDaoTest {
 
 	@Test public void testFindArtworkByArtistName() throws DaoException{
 		String artistName = "Muse";
-		List<Disk> disks = diskDao.findDiskByArtistName(artistName);
+		List<Artist> disks = diskDao.findDiskByArtistName(artistName);
 		Assert.assertNotNull(disks);
-		for(Disk disk: disks){
-			System.out.println("DiskDaoTest testFindArtworkByArtistName Disk --> "+disk);
-		}
+//		for(Disk disk: disks){
+//			System.out.println("DiskDaoTest testFindArtworkByArtistName Disk --> "+disk);
+//		}
 	}
 	
 }
