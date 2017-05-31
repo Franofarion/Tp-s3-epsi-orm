@@ -23,11 +23,6 @@ public class Disk extends Article implements Serializable {
 	@EmbeddedId
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column
-	private Long idArticle;
-
-	@EmbeddedId
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
 	private Long idArtist;
 
 	private MusicStyle musicStyle;
